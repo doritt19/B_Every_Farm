@@ -43,8 +43,8 @@ MonoBehaviour:
     y: 506
     width: 946
     height: 441
-  m_MinSize: {x: 100, y: 100}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 101, y: 121}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 21}
   m_Panes:
   - {fileID: 21}
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 29
+  controlID: 19
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -191,8 +191,8 @@ MonoBehaviour:
     y: 0
     width: 946
     height: 506
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 201, y: 221}
+  m_MaxSize: {x: 4001, y: 4021}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -244,8 +244,8 @@ MonoBehaviour:
     y: 0
     width: 472
     height: 475
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -938,21 +938,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: a482ffff04fbffffac610000ce610000bc620000c0620000ce6200002c6300004e63000084630000a8630000c4630000d6630000dc630000f2630000046400001864000034640000786400009c640000aa640000b4640000c0640000ca640000d0640000da640000f464000008650000286500003a6500005265000078650000a6650000ee65000008660000126600002e6600003e66000060660000786600007c660000866600008c660000b2660000
+      m_ExpandedIDs: 5af0ffffeaf0ffff34f1fffff0f5ffff32f6ffff74f6ffff16fbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Content
-        m_OriginalName: Content
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 25558
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 4
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -1007,7 +1007,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -1015,16 +1015,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets
+  - Assets/Scenes
   m_LastFoldersGridSize: 16
   m_LastProjectPath: K:\Unity\GitHub\B_Every_Farm\farm2d
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 16670000
-    m_LastClickedID: 26390
-    m_ExpandedIDs: 000000001667000000ca9a3b
+    m_SelectedIDs: 2c670000
+    m_LastClickedID: 26412
+    m_ExpandedIDs: 00000000146700001677000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1052,7 +1052,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000016670000
+    m_ExpandedIDs: 0000000014670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1083,18 +1083,18 @@ MonoBehaviour:
     m_ExpandedInstanceIDs: 7c690000f467000020680000e26700008a620000be610000b4630000ac64000024630000347100009e5a0000da6700001c5e00000e5e00001e5e0000965d0000725c0000125d00008e6100008e7e000024900000ba7100001878000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: TopDown 2D RPG BE3
+      m_OriginalName: TopDown 2D RPG BE3
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 30486
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_CreateAssetUtility:

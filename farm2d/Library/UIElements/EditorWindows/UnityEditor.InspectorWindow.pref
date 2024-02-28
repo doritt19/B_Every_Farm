@@ -21,7 +21,9 @@ MonoBehaviour:
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-m_SelectionSprites__UnityEngine.UIElements.ListView
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-m_SelectionColliderTypes__UnityEngine.UIElements.ListView
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-menuButtons__UnityEngine.UIElements.ListView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-Chapter__UnityEngine.UIElements.ListView
   m_Values:
+  - '{}'
   - '{}'
   - '{}'
   - '{}'
