@@ -54,7 +54,7 @@ public class GameManager : MonoBehaviour
         
         goldText.text = goldCount.ToString();
         // playButton에 클릭 이벤트 핸들러 추가
-        soundButton.onClick.AddListener(ToggleAudio);
+        //soundButton.onClick.AddListener(ToggleAudio);
         playerHealth = 3;
 
 
