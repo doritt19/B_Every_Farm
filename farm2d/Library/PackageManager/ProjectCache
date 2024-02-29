@@ -5,16 +5,16 @@ m_ProjectFiles:
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638439192934685305
-    m_Hash: 1189994576
+      ticks: 638447004194001472
+    m_Hash: 161854313
   m_LockFileStatus:
     m_FilePath: K:/Unity/GitHub/B_Every_Farm/farm2d/Packages/packages-lock.json
     m_PathExists: 1
     m_ContentTrackingEnabled: 1
     m_ModificationDate:
       serializedVersion: 2
-      ticks: 638439193361293108
-    m_Hash: 1771892165
+      ticks: 638447004194001472
+    m_Hash: 4293548193
 m_EmbeddedPackageManifests:
   m_ManifestsStatus: {}
 m_LocalPackages:
@@ -3245,6 +3245,7 @@ m_ResolvedPackages:
     - 10.0.2
     - 10.0.3
     - 10.1.0
+    - 10.1.1
     compatible:
     - 9.0.4
     - 9.1.0
@@ -3496,6 +3497,7 @@ m_ResolvedPackages:
     - 9.0.0-pre.2
     - 9.0.0
     - 9.0.1
+    - 9.0.2
     compatible:
     - 8.0.2
     - 8.0.3
@@ -3728,6 +3730,7 @@ m_ResolvedPackages:
     - 10.0.0
     - 10.0.1
     - 10.0.2
+    - 10.0.3
     compatible:
     - 9.0.2
     recommended: 9.0.2
@@ -4163,6 +4166,7 @@ m_ResolvedPackages:
     - 9.0.1
     - 9.0.2
     - 9.0.3
+    - 9.0.4
     compatible:
     - 8.0.1
     - 8.0.2

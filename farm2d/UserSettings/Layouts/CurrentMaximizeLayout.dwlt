@@ -25,7 +25,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 121
+  controlID: 3894
 --- !u!114 &2
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -63,7 +63,7 @@ MonoBehaviour:
   m_SerializedViewNames:
   - UnityEditor.DeviceSimulation.SimulatorWindow
   m_SerializedViewValues:
-  - K:\Unity\GitHub\B_Every_Farm\farm2d\Library\PlayModeViewStates\21ca6dc36de0e1547bbf994733186307
+  - K:\Unity\GitHub\B_Every_Farm\farm2d\Library\PlayModeViewStates\52813f612491748498a5a9522eb485ad
   m_PlayModeViewName: GameView
   m_ShowGizmos: 0
   m_TargetDisplay: 0
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 29
+  controlID: 3813
 --- !u!114 &4
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -587,9 +587,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 2.914626, y: -1.450418, z: -9.9120865}
+    m_Target: {x: -4.5131645, y: 0.9081705, z: -9.968103}
     speed: 2
-    m_Value: {x: 2.914626, y: -1.450418, z: -9.9120865}
+    m_Value: {x: -4.5131645, y: 0.9081705, z: -9.968103}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -639,9 +639,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 3.3332877
+    m_Target: 9.977444
     speed: 2
-    m_Value: 3.3332877
+    m_Value: 9.977444
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -702,7 +702,7 @@ MonoBehaviour:
     m_OverlaysVisible: 1
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: -3276
+  m_LastSelectedObjectID: 25362
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -823,7 +823,7 @@ MonoBehaviour:
   m_MinSize: {x: 100, y: 100}
   m_MaxSize: {x: 8096, y: 16192}
   vertical: 1
-  controlID: 73
+  controlID: 3858
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -889,21 +889,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 0cc6ffffe2d4ffffecd4fffffcd4ffff02d5ffff34f3ffff4ef3ffff54f3ffffb4f3ffff44f4ffffd0f4ffff2af5ffff8af5ffff1af6ffff64f6ffffb6f6ffff00f7ffff02f9ffff5c94000076940000
+      m_ExpandedIDs: 16fbffff126b0000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Main Camera
-        m_OriginalName: Main Camera
+        m_Name: 
+        m_OriginalName: 
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 37548
+        m_UserData: 0
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 0
+        m_OriginalEventType: 11
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 10}
       m_SearchString: 
@@ -923,7 +923,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: ProjectBrowser
+  m_Name: ConsoleWindow
   m_EditorClassIdentifier: 
   m_Children: []
   m_Position:
@@ -932,14 +932,14 @@ MonoBehaviour:
     y: 487
     width: 472
     height: 460
-  m_MinSize: {x: 230, y: 250}
-  m_MaxSize: {x: 10000, y: 10000}
-  m_ActualView: {fileID: 13}
+  m_MinSize: {x: 102, y: 121}
+  m_MaxSize: {x: 4002, y: 4021}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 13}
   - {fileID: 14}
-  m_Selected: 0
-  m_LastSelected: 1
+  m_Selected: 1
+  m_LastSelected: 0
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -985,7 +985,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scenes
+    - Assets/KWS
     m_Globs: []
     m_OriginalText: 
     m_ImportLogFlags: 0
@@ -993,16 +993,16 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 16
   m_LastFolders:
-  - Assets/Scenes
+  - Assets/KWS
   m_LastFoldersGridSize: 16
   m_LastProjectPath: K:\Unity\GitHub\B_Every_Farm\farm2d
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ac670000
-    m_LastClickedID: 26540
-    m_ExpandedIDs: 00000000886700008a670000a867000000ca9a3b
+    m_SelectedIDs: 4c6c0000
+    m_LastClickedID: 27724
+    m_ExpandedIDs: 00000000326c0000346c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1030,7 +1030,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000886700008a670000
+    m_ExpandedIDs: 00000000326c0000346c000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1055,9 +1055,9 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: b2670000
-    m_LastClickedInstanceID: 26546
-    m_HadKeyboardFocusLastEvent: 1
+    m_SelectedInstanceIDs: 12630000
+    m_LastClickedInstanceID: 25362
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: 7c690000f467000020680000e26700008a620000be610000b4630000ac64000024630000347100009e5a0000da6700001c5e00000e5e00001e5e0000965d0000725c0000125d00008e6100008e7e000024900000ba7100001878000000000000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -1187,7 +1187,7 @@ MonoBehaviour:
     m_CachedPref: 291
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
-  m_LastInspectedObjectInstanceID: 26546
+  m_LastInspectedObjectInstanceID: 25362
   m_LastVerticalScrollValue: 0
   m_GlobalObjectId: 
   m_InspectorMode: 0
