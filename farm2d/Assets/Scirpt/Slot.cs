@@ -7,13 +7,17 @@ public class Slot : MonoBehaviour
 {
     public static Slot st;
     public bool isShopMode;
-    public Button slotbutton;
+
+    public UnityEngine.UI.Button slotbutton;
+   
     // Start is called before the first frame update
-    void Start()
+    private void Awake()
     {
+
+    }
+    void Start()
+    {   
         slotbutton.onClick.AddListener(OnButtonClick);
-        st = this;
-        
     }
 
     // Update is called once per frame

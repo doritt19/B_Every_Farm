@@ -2,9 +2,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
-public class GameManager : MonoBehaviour
+public class SlotManager : MonoBehaviour
 {
-    public static GameManager GM;
+    public static SlotManager GM;
     public Transform[] slotInfo;
     public GameObject[] parentObjects;
     public GameObject shoptest;

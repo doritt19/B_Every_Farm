@@ -32,7 +32,7 @@ public class ShopScriptUI : MonoBehaviour
         }
 
         shopPanel.SetActive(activeInventory);
-        closeShop.onClick.AddListener(DeActiveShop);
+        //closeShop.onClick.AddListener(DeActiveShop);
     }
 
     // Update is called once per frame
@@ -96,7 +96,7 @@ public class ShopScriptUI : MonoBehaviour
     {
         shopPanel.SetActive(false);
         ItemDataBase.instance.currentType=ItemType.Main;
-        GameManager.GM.shoptest.SetActive(false);
+       
     }
    
 }

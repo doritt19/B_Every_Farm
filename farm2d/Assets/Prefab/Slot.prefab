@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 7625757577879671455}
   - component: {fileID: 7625757577879671440}
   - component: {fileID: 6967012850186818915}
-  - component: {fileID: 1882482132671933535}
+  - component: {fileID: 1138122593932707401}
   m_Layer: 5
   m_Name: Slot
   m_TagString: Untagged
@@ -34,7 +34,6 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -147,10 +146,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cfabb0440166ab443bba8876756fdfa9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_EffectColor: {r: 0, g: 0, b: 0, a: 0.5}
+  m_EffectColor: {r: 1, g: 1, b: 1, a: 0.5}
   m_EffectDistance: {x: 4, y: -4}
   m_UseGraphicAlpha: 1
---- !u!114 &1882482132671933535
+--- !u!114 &1138122593932707401
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

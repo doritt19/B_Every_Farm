@@ -20,9 +20,9 @@ public class Shopbutton : MonoBehaviour
     public void DisplayItemInfo(Item item)
     {
         
-                GameManager.GM.slotInfo[1].GetComponent<TextMeshProUGUI>().text = item.itemName;
-                GameManager.GM.slotInfo[2].GetComponent<TextMeshProUGUI>().text = item.imformation;
-                GameManager.GM.slotInfo[3].GetComponent<TextMeshProUGUI>().text = item.value.ToString() + " gold";
+                SlotManager.GM.slotInfo[1].GetComponent<TextMeshProUGUI>().text = item.itemName;
+                SlotManager.GM.slotInfo[2].GetComponent<TextMeshProUGUI>().text = item.imformation;
+                SlotManager.GM.slotInfo[3].GetComponent<TextMeshProUGUI>().text = item.value.ToString() + " gold";
            
         
     }
