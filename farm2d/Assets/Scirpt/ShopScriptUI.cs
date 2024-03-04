@@ -96,7 +96,7 @@ public class ShopScriptUI : MonoBehaviour
     {
         shopPanel.SetActive(false);
         ItemDataBase.instance.currentType=ItemType.Main;
-        ItemDataBase.instance.itemDB.Clear();
+        GameManager.GM.shoptest.SetActive(false);
     }
    
 }

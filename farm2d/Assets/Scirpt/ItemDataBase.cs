@@ -134,6 +134,7 @@ public class ItemDataBase : MonoBehaviour
         {
             field = ItemDataBase.instance.itemDB.FindAll(item => item.itemType == ItemType.Field);
         }
+        
     }
     public void reference()
     {
@@ -156,6 +157,13 @@ public class ItemDataBase : MonoBehaviour
             for (int i = 0; i < field.Count; i++)
             {
                 ShopScriptUI.SSU.slots[i].GetComponent<Image>().sprite = field[i].itemImage;
+            }
+        }
+        else
+        {
+            for (int i = 0; i < ShopScriptUI.SSU.slots.Length; i++)
+            {
+                ShopScriptUI.SSU.slots[i].GetComponent<Image>().sprite = null;
             }
         }
     }
