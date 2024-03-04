@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class InventoryButton : MonoBehaviour
 {
-    public GameObject prefabObject;
+    public GameObject[] prefabObject;
 
     private GameObject spawnedObject;
 
@@ -13,14 +13,14 @@ public class InventoryButton : MonoBehaviour
         spawnedObject = null;
     }
 
-    public void SpawnObject()
+    public void SpawnObject(int plant)
     {
         
         if (spawnedObject == null)
         {
             
             // 프리팹 오브젝트 복사
-            spawnedObject = Instantiate(prefabObject, Vector3.zero, Quaternion.identity);
+            spawnedObject = Instantiate(prefabObject[plant], Vector3.zero, Quaternion.identity);
             //Debug.Log("q") 테스트용 로그
             // 마우스 클릭 상태로 설정
             SetObjectToFollowMouse(true);
