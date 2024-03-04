@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class TouchScreen : MonoBehaviour
 {
+    public static TouchScreen Instance;
     public float panSpeed = 2f; // 카메라 이동 속도 조절
     public float zoomSpeed = 200f; // 카메라 줌 속도 조절
 
@@ -12,13 +14,22 @@ public class TouchScreen : MonoBehaviour
     private int panFingerId; // 터치로 이동하는 손가락 식별자
     private bool wasZoomingLastFrame; // 줌 중이었는지 여부
 
+    public GameObject isactivatingINVEN; // 인벤토리 오브젝트를 사용중이었는지 여부
+    public GameObject isactivatingMENU; // 인벤토리 오브젝트를 사용중이었는지 여부
+
+
     void Awake()
     {
+        TouchScreen instance = this;
         cam = GetComponent<Camera>();
     }
 
     void Update()
     {
+        if (isactivatingMENU.activeSelf || isactivatingINVEN.activeSelf)
+        {
+            return;
+        }
         if (Input.touchSupported && Application.platform != RuntimePlatform.WebGLPlayer)
         {
             HandleTouch();
@@ -68,6 +79,7 @@ public class TouchScreen : MonoBehaviour
 
     void HandleMouse()
     {
+        
         // 마우스로 카메라 이동 및 줌
         float scroll = Input.GetAxis("Mouse ScrollWheel");
         ZoomCamera(scroll * zoomSpeed);

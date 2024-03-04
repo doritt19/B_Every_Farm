@@ -84,9 +84,8 @@ public class MainUI : MonoBehaviour
                 if (inventoryPanel.activeSelf) // 세팅패널 오브젝트가 켜져 있으면
                 {
                     inventoryPanel.SetActive(false); // 세팅패널을 끄기
-
                 }
-                else // 메뉴바가 꺼져있으면
+                else // 인벤토리 바가 꺼져있으면
                 {
                     inventoryPanel.SetActive(true); // 세팅패널을 켜기
                 }

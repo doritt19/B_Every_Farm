@@ -383,6 +383,7 @@
 "Assets/hb_minigame/01.Scripts/PlayerController.cs"
 "Assets/hb_minigame/01.Scripts/VegetableSpawner.cs"
 "Assets/KSW/TextManager.cs"
+"Assets/Main_kang/Script/AllSound.cs"
 "Assets/Main_kang/Script/InventoryButton.cs"
 "Assets/Main_kang/Script/Main UI.cs"
 "Assets/Main_kang/Script/TouchScreen.cs"
