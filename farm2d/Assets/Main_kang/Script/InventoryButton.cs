@@ -18,10 +18,10 @@ public class InventoryButton : MonoBehaviour
         
         if (spawnedObject == null)
         {
-            Debug.Log("q");
+            
             // 프리팹 오브젝트 복사
             spawnedObject = Instantiate(prefabObject, Vector3.zero, Quaternion.identity);
-
+            //Debug.Log("q") 테스트용 로그
             // 마우스 클릭 상태로 설정
             SetObjectToFollowMouse(true);
         }
@@ -31,6 +31,7 @@ public class InventoryButton : MonoBehaviour
     {
         if (spawnedObject != null)
         {
+            
             // 마우스 클릭시 오브젝트 파괴
             if (Input.GetMouseButtonDown(0))
             {
