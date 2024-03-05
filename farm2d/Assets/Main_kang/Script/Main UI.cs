@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,13 +23,16 @@ public class MainUI : MonoBehaviour
     public GameObject inventoryPanel; // 스킬과 가방 버튼 패널
 
 
-    public GameObject InfoPanel; // 날씨 정보 패널
-
+    public Text InfoDate; // 날짜 정보 텍스트
+    public Text InfoTime; // 시간 정보 텍스트
+    public Image InfoWether; // 날씨 정보 이미지
 
     public GameObject menuPanel; // 메뉴 바
     public Button[] menuButtons; // 메뉴 바의 버튼을 담을 리스트
     public GameObject settingPanel; // 옵션 패널
+    public GameObject shopUI; // 상점 UI
 
+    
     
     // Start is called before the first frame update
     void Start()
@@ -36,13 +40,13 @@ public class MainUI : MonoBehaviour
         menuPanel.SetActive(false);
         inventoryPanel.SetActive(false);
         settingPanel.SetActive(false);
-
+        
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        
+        GetCurrentDate();
     }
 
     // 인벤토리 버튼클릭 매서드
@@ -101,11 +105,15 @@ public class MainUI : MonoBehaviour
                 break;
             case 3:
                 /* 상점 창 패널 켜기 끄기 
-                 * 
-                 *  이곳에 퀘스트 창 패널 UI를 키고 끄는
-                 *  코드를 집어넣기
-                 * 
                  */
+                /*if (shopUI.activeSelf) // 세팅패널 오브젝트가 켜져 있으면
+                {
+                    //shopUI.SetActive(false); // 세팅패널을 끄기
+                }
+                else // 인벤토리 바가 꺼져있으면
+                {
+                    shopUI.SetActive(true);
+                }*/
                 break;
             case 4:
                 /*퀘스트 창 패널 켜기 끄기 
@@ -136,4 +144,13 @@ public class MainUI : MonoBehaviour
         }
 
     }
+
+    // 현재시간을 출력하는 매서드
+    public void GetCurrentDate()
+    {
+        InfoDate.text = DateTime.Now.ToString("yyyy년MM월dd일");
+        InfoTime.text = DateTime.Now.ToString("HH시mm분");
+       
+    }
+
 }
