@@ -19,12 +19,13 @@ public class Shopbutton : MonoBehaviour
     }
     public void DisplayItemInfo(Item item)
     {
-        
-                SlotManager.GM.slotInfo[1].GetComponent<TextMeshProUGUI>().text = item.itemName;
-                SlotManager.GM.slotInfo[2].GetComponent<TextMeshProUGUI>().text = item.imformation;
-                SlotManager.GM.slotInfo[3].GetComponent<TextMeshProUGUI>().text = item.value.ToString() + " gold";
-           
-        
+
+        SlotManager.GM.slotInfo[1].GetComponent<TextMeshProUGUI>().text = item.itemName;
+        SlotManager.GM.slotInfo[2].GetComponent<TextMeshProUGUI>().text = item.imformation;
+        SlotManager.GM.slotInfo[4].GetComponent<TextMeshProUGUI>().text = item.value.ToString();
+       
+
+
     }
     public void OnButtonClick(int i)
     {
@@ -34,6 +35,7 @@ public class Shopbutton : MonoBehaviour
         currentId = i;
         if (item != null)
         {
+           
             DisplayItemInfo(item);
         }
         else

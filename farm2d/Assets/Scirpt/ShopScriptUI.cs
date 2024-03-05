@@ -96,7 +96,7 @@ public class ShopScriptUI : MonoBehaviour
     {
         shopPanel.SetActive(false);
         ItemDataBase.instance.currentType=ItemType.Main;
-       
+        SlotManager.GM.shoptest.SetActive(false);
     }
    
 }

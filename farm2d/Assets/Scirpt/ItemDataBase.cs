@@ -30,7 +30,6 @@ public class ItemDataBase : MonoBehaviour
 {
     public static ItemDataBase instance;
     public List<Item> itemDB = new List<Item>();
-    public List<Item> items;
     public Vector3[] pos;
     public ItemType currentType;
 

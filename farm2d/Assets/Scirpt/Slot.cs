@@ -28,11 +28,11 @@ public class Slot : MonoBehaviour
     {
         if(ItemDataBase.instance.currentType!=ItemType.Main)
         {
-            GameManager.GM.shoptest.SetActive(true);
+            SlotManager.GM.shoptest.SetActive(true);
         }
         else
         {
-            GameManager.GM.shoptest.SetActive(false);
+            SlotManager.GM.shoptest.SetActive(false);
         }
     }
     
