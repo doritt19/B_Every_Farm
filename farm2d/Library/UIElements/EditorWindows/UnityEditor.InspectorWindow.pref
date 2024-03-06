@@ -21,6 +21,11 @@ MonoBehaviour:
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-m_SelectionSprites__UnityEngine.UIElements.ListView
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-m_SelectionColliderTypes__UnityEngine.UIElements.ListView
   - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-menuButtons__UnityEngine.UIElements.ListView
+<<<<<<< Updated upstream
+=======
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-Chapter__UnityEngine.UIElements.ListView
+  - __PanelContainer__rootVisualContainer__inspector-window-main-scroll-view__unity-list-hpImage__UnityEngine.UIElements.ListView
+>>>>>>> Stashed changes
   m_Values:
   - '{}'
   - '{}'
@@ -29,4 +34,10 @@ MonoBehaviour:
   - '{}'
   - '{}'
   - '{}'
+<<<<<<< Updated upstream
   - '{"m_ShowAlternatingRowBackgrounds":0,"serializedVirtualizationData":{"scrollOffset":{"x":0.0,"y":0.0},"firstVisibleIndex":0,"contentPadding":0.0,"contentHeight":0.0,"anchoredItemIndex":0,"anchorOffset":0.0}}'
+=======
+  - '{}'
+  - '{}'
+  - '{"m_ShowAlternatingRowBackgrounds":0,"serializedVirtualizationData":{"scrollOffset":{"x":0.0,"y":0.0},"firstVisibleIndex":0,"contentPadding":0.0,"contentHeight":66.0,"anchoredItemIndex":0,"anchorOffset":0.0}}'
+>>>>>>> Stashed changes

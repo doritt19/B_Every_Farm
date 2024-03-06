@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.SqlTypes;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI; // UI 를 쓰기위해서 유니티 유아이 시스템 추가
 
 public class MainUI : MonoBehaviour
@@ -17,6 +19,9 @@ public class MainUI : MonoBehaviour
      */
 
     public GameObject profilePanel; // 프로필 정보 패널
+    public Text moneytext; // 프로필 머니 정보 텍스트 (hb)
+    public Text exptext; // 프로필 경험치 정보 텍스트
+    
 
 
     public GameObject inventoryPanel; // 스킬과 가방 버튼 패널
@@ -29,13 +34,31 @@ public class MainUI : MonoBehaviour
     public Button[] menuButtons; // 메뉴 바의 버튼을 담을 리스트
     public GameObject settingPanel; // 옵션 패널
 
-    
+
     // Start is called before the first frame update
+    private void Awake()
+    {   
+    }
     void Start()
     {
+        int currentGold = int.Parse(moneytext.text); // 현재 텍스트에 있는 값 가져오기
+        int goldFromMiniGame = PlayerPrefs.GetInt(MiniGameManager.GoldCountKey); // 미니게임에서 얻은 골드 값 가져오기
+        int totalGold = currentGold + goldFromMiniGame; // 누적된 골드 값 계산
+        moneytext.text = "" + totalGold; // 머니텍스트에 미니게임에서 얻은 골드값을 누적(hb)
+        // PlayerPrefs에서 경험치를 불러와 UI에 적용
+        int currentExp = PlayerPrefs.GetInt("Experience", 0);
+        exptext.text = "Exp / " + currentExp.ToString();
+
+        /*
+         (hb)
+      */
+
+
         menuPanel.SetActive(false);
         inventoryPanel.SetActive(false);
         settingPanel.SetActive(false);
+        
+        
 
     }
 
@@ -70,6 +93,7 @@ public class MainUI : MonoBehaviour
         switch (buttonIndex)
         {
             case 0:
+                SceneManager.LoadScene(1); //미니게임 씬 실행 코드(HB)
                 /*
                  *  미니게임 씬 실행하는 코드 집어넣기
                  */
@@ -132,4 +156,6 @@ public class MainUI : MonoBehaviour
         }
 
     }
+    // 값을 받는 메서드 (HB)
+   
 }
