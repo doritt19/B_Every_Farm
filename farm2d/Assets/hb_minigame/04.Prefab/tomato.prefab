@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7107304054138677919}
   - component: {fileID: 537854875825416402}
   - component: {fileID: 891239420177625109}
+  - component: {fileID: -2987870185143788757}
   m_Layer: 0
   m_Name: tomato
   m_TagString: Fruit
@@ -148,3 +149,16 @@ CircleCollider2D:
   m_Offset: {x: 0.008883357, y: 0.0059221983}
   serializedVersion: 2
   m_Radius: 0.30228323
+--- !u!114 &-2987870185143788757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9153157134752069963}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcf1a9424808f5549a462cd55e878f0f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tomatoprefab: {fileID: 9153157134752069963}

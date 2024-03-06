@@ -60,10 +60,10 @@ public class Shopbutton : MonoBehaviour
     }
     public void buy(Item item)
     {
-        if (ShopScriptUI.SSU.gold >= item.value)
+        if (ShopScriptUI.gold >= item.value)
         {
             // 구매 가능한 경우
-            ShopScriptUI.SSU.gold -= item.value; // 골드 차감
+            ShopScriptUI.gold -= item.value; // 골드 차감
                                                // 여기에서 아이템을 플레이어 인벤토리에 추가하는 등의 작업 수행
                                                // (아이템 추가 방식은 프로젝트에 따라 다를 수 있습니다)
             Debug.Log("Item purchased: " + item.itemName);

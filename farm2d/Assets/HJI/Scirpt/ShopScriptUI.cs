@@ -14,7 +14,7 @@ public class ShopScriptUI : MonoBehaviour
     public Button closeShop;
     public List<Sprite> loadedImage;
     public GameObject goldtext;
-    public int gold = 50000;
+    public static int gold = 50000; // 초기값 골드 변경필요
 
     public bool isStoreActive= false;
     // Start is called before the first frame update

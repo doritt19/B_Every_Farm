@@ -36,6 +36,20 @@ public class PlayerController : MonoBehaviour
         Vector3 clampedPosition = transform.position;
         clampedPosition.x = Mathf.Clamp(clampedPosition.x, leftBound.position.x, rightBound.position.x);
         transform.position = clampedPosition;
+        // 키보드 입력을 받아 플레이어 이동
+        float horizontalInput = Input.GetAxis("Horizontal");
+
+        // 이동 방향에 따라 플레이어 이동
+        transform.Translate(new Vector3(horizontalInput * moveSpeed * Time.deltaTime, 0f, 0f));
+        // 입력에 따라 플레이어가 좌우 방향을 바라보도록 설정
+        if (horizontalInput > 0) // 왼른쪽으로 이동하는 경우
+        {
+            transform.localScale = new Vector3(-1f, 1f, 1f); // 플레이어 스케일을 왼쪽 방향으로 설정
+        }
+        else if (horizontalInput < 0) // 오른쪽으로 이동하는 경우
+        {
+            transform.localScale = new Vector3(1f, 1f, 1f); // 플레이어를 좌우 반전하여 오른 방향으로 설정
+        }
     }
     public void inputmove(float moveInputs)
     {
