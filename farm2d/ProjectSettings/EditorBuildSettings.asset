@@ -5,7 +5,13 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Minsu.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Main.unity
+    guid: be97ecd84ff24fb4eb8edc5282e12d3a
+  - enabled: 1
+    path: Assets/hb_minigame/00.Scenes/MiniGame.unity
+    guid: 2f9a8c02ea75a77469657bdb4dbfa062
   m_configObjects: {}

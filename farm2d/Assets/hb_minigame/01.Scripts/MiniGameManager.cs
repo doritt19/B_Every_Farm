@@ -17,13 +17,12 @@ public class MiniGameManager : MonoBehaviour
     public Button quitButton; // 게임 종료 버튼
     public Text goldCountText; // 게임이끝날떄 표시될 총 얻은 골드.
 
-    // PlayerPrefs 키
-    public const string GoldCountKey = "GoldCount";
+    // PlayerPrefs 키 불러올 공간
+    private string minigameGold = "MinigameGold";
     
-    // 플레이어의 최대 체력
-    public const int MaxPlayerHealth = 3;
+ 
     // 현재 플레이어의 체력
-    public  int playerHealth = 3; // 플레이어 체력
+    public int playerHealth; // 미니게임 횟수
 
     public bool isPlaying = false; // 음악이재생중인지 시작될땐 꺼져있음.
 
@@ -40,6 +39,7 @@ public class MiniGameManager : MonoBehaviour
     private void Awake()
     {
         
+        
         Time.timeScale = 1f;
 
         if (instance == null)
@@ -48,7 +48,7 @@ public class MiniGameManager : MonoBehaviour
            
             Debug.Log("인스턴스적용됌.");
             //DontDestroyOnLoad(gameObject);
-            PlayerPrefs.SetInt(GoldCountKey, 0);
+            PlayerPrefs.SetInt(minigameGold, 0);
             
 
         }
@@ -71,6 +71,7 @@ public class MiniGameManager : MonoBehaviour
 
     void Start()
     {
+        playerHealth = GameManager.minigameCount;
 
         goldText.text = goldCount.ToString(); // 골드표시 골드카운팅으로 문자화
         // playButton에 클릭 이벤트 핸들러 추가
@@ -184,15 +185,15 @@ public class MiniGameManager : MonoBehaviour
         // goldCount 저장
         SaveGoldCount();
         // playerHealth값 저장
-        // 경험치 획득
-        int expGained = 300;
+        
 
         // 현재 경험치를 가져옴
-        int currentExp = PlayerPrefs.GetInt("Experience", 0);
-        currentExp += expGained;
-
+        int currentExp = PlayerPrefs.GetInt("Experience");
+        int currentGold = PlayerPrefs.GetInt("Goldcount")+PlayerPrefs.GetInt(minigameGold);
+        Debug.Log("한나 테스트용 현재 골드" + currentGold);
         // 새로운 경험치를 저장
         PlayerPrefs.SetInt("Experience", currentExp);
+        PlayerPrefs.SetInt("Goldcount", currentGold);
 
         // PlayerPrefs를 즉시 저장
         PlayerPrefs.Save();
@@ -206,16 +207,16 @@ public class MiniGameManager : MonoBehaviour
     // 게임 종료 시 goldCount를 PlayerPrefs에 저장
     private void SaveGoldCount()
     {
-        PlayerPrefs.SetInt(GoldCountKey, goldCount);
+        PlayerPrefs.SetInt(minigameGold, goldCount);
         //  MainUI mainUI = FindObjectOfType<MainUI>();
         // mainUI.moneytext.text = PlayerPrefs.GetString(GoldCountKey);
     }
     // 로드 시 goldCount를 PlayerPrefs에서 불러오기
     private void LoadGoldCount()
     {
-        if (PlayerPrefs.HasKey(GoldCountKey))
+        if (PlayerPrefs.HasKey(minigameGold))
         {
-            goldCount = PlayerPrefs.GetInt(GoldCountKey);
+            goldCount = PlayerPrefs.GetInt(minigameGold);
         }
     }
 
