@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Seed
   - Field
+  - ItemInformation
+  - Store
   layers:
   - Default
   - TransparentFX
@@ -14,7 +16,7 @@ TagManager:
   - Water
   - UI
   - Grid
-  - 
+  - Field
   - 
   - 
   - 
