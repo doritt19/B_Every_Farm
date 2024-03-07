@@ -42,6 +42,8 @@ public class GameManager : MonoBehaviour
         }
         // 아래의 함수를 사용하여 씬이 전환되더라도 선언되었던 인스턴스가 파괴되지 않는다.
         DontDestroyOnLoad(gameObject);
+
+        TestGame(); // 테스트를 위한 함수
     }
 
     /// <summary>
@@ -52,12 +54,13 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt(goldCountKey, 20000);
         PlayerPrefs.SetInt(expCountKey, 0);
+        PlayerPrefs.Save();
     }
    
     // Start is called before the first frame update
     void Start()
     {
-        TestGame(); // 테스트를 위한 함수
+        
         
     }
 

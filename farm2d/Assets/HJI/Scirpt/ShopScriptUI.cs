@@ -20,7 +20,7 @@ public class ShopScriptUI : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        gold = PlayerPrefs.GetInt("Goldcount");
+        gold = PlayerPrefs.GetInt(GameManager.goldCountKey);
 
 
         slots = slotHolder.GetComponentsInChildren<Slot>();
@@ -99,6 +99,15 @@ public class ShopScriptUI : MonoBehaviour
         shopPanel.SetActive(false);
         ItemDataBase.instance.currentType=ItemType.Main;
         SlotManager.GM.shoptest.SetActive(false);
+
+        SaveShopData();
     }
-   
+    public void SaveShopData()
+    {
+        // 한나 수정 상점 닫을때 남은 골드를 저장
+        PlayerPrefs.SetInt(GameManager.goldCountKey, gold);
+        PlayerPrefs.Save();
+
+        // 구매한 아이템을 인벤토리에 반영하는 코드 필요
+    }
 }

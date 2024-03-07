@@ -116,8 +116,7 @@ public class MiniGameManager : MonoBehaviour
             Debug.Log("목숨-1");
 
             // 한나수정, 게임 종료시 게임 종료 안내 패널 활성화
-            restartPanel.SetActive(true);
-            goldCountText.text = PlayerPrefs.GetInt("Goldcount") + " + 얻은 골드 :" + goldCount.ToString();
+            EndGame();
 
 
             // 여기에 게임 종료에 대한 처리를 추가할 수 있습니다.
@@ -167,11 +166,12 @@ public class MiniGameManager : MonoBehaviour
     {
         // 게임 종료 처리
         Debug.Log("체력이 모두 소진되어 게임이 종료됩니다.");
-        
-       
+
+
         // 게임 종료 UI를 활성화하거나 다른 종료 처리를 수행할 수 있습니다.
 
-
+        restartPanel.SetActive(true);
+        goldCountText.text = PlayerPrefs.GetInt("Goldcount") + " + 얻은 골드 :" + goldCount.ToString();
 
 
         // 게임 종료
@@ -179,9 +179,19 @@ public class MiniGameManager : MonoBehaviour
     }
     public void reStart()
     {
-        restartPanel.SetActive(false);
+        if (playerHealth > 0) // 미니 게임 횟수가 남았다면 게임 재시작
+        {
+            restartPanel.SetActive(false);
 
-        Time.timeScale = 1f; // 게임을 실행합니다.
+            Time.timeScale = 1f; // 게임을 실행합니다.
+
+        }
+        else
+        {
+            Debug.Log("재시작불가");
+           
+        }
+       
 
         /* 한나 수정 한번에 관리
         restartButton.gameObject.SetActive(false); // 재시작버튼 비활성화
@@ -209,10 +219,10 @@ public class MiniGameManager : MonoBehaviour
         */
 
         // 벌어들인 골드와 현재 골드를 더한 값 저장
-        int currentGold = PlayerPrefs.GetInt("Goldcount") + PlayerPrefs.GetInt(minigameGold);
+        int currentGold = PlayerPrefs.GetInt(GameManager.goldCountKey) + PlayerPrefs.GetInt(minigameGold);
         Debug.Log("한나 테스트용 현재 골드" + currentGold);
         // 새로운 골드값을 저장
-        PlayerPrefs.SetInt("Goldcount", currentGold);
+        PlayerPrefs.SetInt(GameManager.goldCountKey, currentGold);
 
         // PlayerPrefs를 즉시 저장
         PlayerPrefs.Save();
@@ -261,11 +271,11 @@ public class MiniGameManager : MonoBehaviour
         int experienceEarned = goldEarned / 10; // 골드의 10%를 경험치로 설정 예시
 
         // 현재 경험치를 가져옴
-        int currentExp = PlayerPrefs.GetInt("Experience", 0);
+        int currentExp = PlayerPrefs.GetInt(GameManager.expCountKey, 0);
         currentExp += experienceEarned;
 
         // 새로운 경험치를 저장
-        PlayerPrefs.SetInt("Experience", currentExp);
+        PlayerPrefs.SetInt(GameManager.expCountKey, currentExp);
 
         // PlayerPrefs를 즉시 저장
         PlayerPrefs.Save();

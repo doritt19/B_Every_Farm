@@ -75,10 +75,7 @@ public class MainUI : MonoBehaviour
        
     }
 
-    public void LoadScene()
-    {
-        SceneManager.LoadScene(1); //미니게임 씬 실행 코드(HB)
-    }
+   
     // 메뉴바의 버튼 클릭시 호출되는 매서드
     public void MenuButton(int buttonIndex) 
     {
@@ -168,12 +165,12 @@ public class MainUI : MonoBehaviour
     }
     public void GetCurrentExp()
     {
-        int currentGold = PlayerPrefs.GetInt("Goldcount"); // 현재 골드 값 가져오기
+        int currentGold = PlayerPrefs.GetInt(GameManager.goldCountKey); // 현재 골드 값 가져오기
         
         
         moneytext.text = "" + currentGold; // 머니텍스트에 미니게임에서 얻은 골드값을 누적(hb)
         // PlayerPrefs에서 경험치를 불러와 UI에 적용
-        int currentExp = PlayerPrefs.GetInt("Experience");
+        int currentExp = PlayerPrefs.GetInt(GameManager.expCountKey);
 
         // 경험치 획득량이 10000을 넘어가면 레벨업
         if (currentExp >= 10000)
@@ -185,8 +182,30 @@ public class MainUI : MonoBehaviour
         }
         exptext.text = currentExp.ToString() + "/10000"; // 현재경험치 / 레벨업까지 필요한 경험치
 
-        /*
-         (hb)
-      */
+      
+    }
+
+    // 골드 복사 테스트용 버튼 , 누를때마다 1000골드 획득
+    public void GoldBug()
+    {
+        PlayerPrefs.SetInt(GameManager.goldCountKey, PlayerPrefs.GetInt(GameManager.goldCountKey) + 1000);
+        PlayerPrefs.Save();
+    }
+
+    /*
+       (hn) 씬 전환 함수
+    */
+    public void LoadScene()
+    {
+        // 미니게임 카운트가 0 이상이라면 씬 전환
+        if(GameManager.minigameCount>0)
+        {
+            SceneManager.LoadScene(1); //미니게임 씬 실행 코드(HB)
+        }
+        else // 미니 게임 카운트가 0 이하라면 
+        {
+            minigamePanel.GetComponentInChildren<Text>().text = "미니게임 가능 횟수를\r\n 모두 소진했습니다";
+        }
+        
     }
 }
