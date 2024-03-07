@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlTypes;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI; // UI 를 쓰기위해서 유니티 유아이 시스템 추가
@@ -28,6 +29,7 @@ public class MainUI : MonoBehaviour
     public GameObject menuPanel; // 메뉴 바
     public Button[] menuButtons; // 메뉴 바의 버튼을 담을 리스트
     public GameObject settingPanel; // 옵션 패널
+    public GameObject minigamePanel; // 미니게임 시작 안내 패널
 
 
     public Text InfoDate; // 날짜 정보 텍스트
@@ -73,6 +75,10 @@ public class MainUI : MonoBehaviour
        
     }
 
+    public void LoadScene()
+    {
+        SceneManager.LoadScene(1); //미니게임 씬 실행 코드(HB)
+    }
     // 메뉴바의 버튼 클릭시 호출되는 매서드
     public void MenuButton(int buttonIndex) 
     {
@@ -80,7 +86,17 @@ public class MainUI : MonoBehaviour
         switch (buttonIndex)
         {
             case 0:
-                SceneManager.LoadScene(1); //미니게임 씬 실행 코드(HB)
+
+                if (minigamePanel.activeSelf) // 세팅패널 오브젝트가 켜져 있으면
+                {
+                    minigamePanel.SetActive(false); // 세팅패널을 끄기
+
+                }
+                else // 메뉴바가 꺼져있으면
+                {
+                    minigamePanel.SetActive(true); // 세팅패널을 켜기
+                    minigamePanel.GetComponentInChildren<Text>().text = "미니게임 가능 횟수\r\n" + GameManager.minigameCount.ToString();
+                }
                 /*
                  *  미니게임 씬 실행하는 코드 집어넣기
                  */
@@ -157,8 +173,17 @@ public class MainUI : MonoBehaviour
         
         moneytext.text = "" + currentGold; // 머니텍스트에 미니게임에서 얻은 골드값을 누적(hb)
         // PlayerPrefs에서 경험치를 불러와 UI에 적용
-        int currentExp = PlayerPrefs.GetInt("Experience", 0);
-        exptext.text = "Exp / " + currentExp.ToString();
+        int currentExp = PlayerPrefs.GetInt("Experience");
+
+        // 경험치 획득량이 10000을 넘어가면 레벨업
+        if (currentExp >= 10000)
+        {
+            currentExp -= 10000; // 레벨업에 필요한 경험치를 제외하고 나머지 값 저장
+            /*
+             * 레벨업에 관한 코드 입력
+             */
+        }
+        exptext.text = currentExp.ToString() + "/10000"; // 현재경험치 / 레벨업까지 필요한 경험치
 
         /*
          (hb)

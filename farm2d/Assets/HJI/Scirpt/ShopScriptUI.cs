@@ -14,13 +14,15 @@ public class ShopScriptUI : MonoBehaviour
     public Button closeShop;
     public List<Sprite> loadedImage;
     public GameObject goldtext;
-    public static int gold = 50000; // 초기값 골드 변경필요
+    public static int gold; // 초기값 골드 변경필요
 
     public bool isStoreActive= false;
     // Start is called before the first frame update
     void Start()
     {
-    
+        gold = PlayerPrefs.GetInt("Goldcount");
+
+
         slots = slotHolder.GetComponentsInChildren<Slot>();
         SSU = this;
         loadedImage = new List<Sprite>(Resources.LoadAll<Sprite>("Images"));

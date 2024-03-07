@@ -38,7 +38,7 @@ public class Basket : MonoBehaviour
 
             int currentGoldCount = miniGameManager.goldCount;
            
-
+            /* 경험치 증가에 관한 코드 ********수정 강한나 미니게임에선 경험치 획득 x
             if (currentGoldCount % 10 == 0)
             {
                 // 10의 배수일 때 경험치 100 증가
@@ -51,7 +51,7 @@ public class Basket : MonoBehaviour
                 // 골드 카운트가 1마다 경험치 5씩 증가
                 Debug.Log("경험치 +5");
                 miniGameManager.UpdateExperience(5);
-            }
+            }*/
 
             Destroy(collision.gameObject);
         }

@@ -7,8 +7,8 @@ public class GameManager : MonoBehaviour
 {
     // PlayerPrefs 키
     public const string goldCountKey = "GoldCount";
-    public const string expCountKey = "ExpCount";
-    public const int minigameCount = 3; // 미니게임 횟수
+    public const string expCountKey = "ExpCount"; // 획득한 경험치
+    public static int minigameCount = 3; // 미니게임 횟수
 
     // 싱글톤 패턴을 사용하기 위한 인스턴스 변수
     private static GameManager _instance;
@@ -44,11 +44,20 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
     }
 
-
+    /// <summary>
+    /// 테스트를 위한 함수
+    /// </summary>
+    public void TestGame()
+    {
+        PlayerPrefs.DeleteAll();
+        PlayerPrefs.SetInt(goldCountKey, 20000);
+        PlayerPrefs.SetInt(expCountKey, 0);
+    }
    
     // Start is called before the first frame update
     void Start()
     {
+        TestGame(); // 테스트를 위한 함수
         
     }
 
