@@ -51,6 +51,7 @@ public class MainUI : MonoBehaviour
     }
 
     // Update is called once per frame
+    //경험치와 날짜 업데이트
     void FixedUpdate()
     {
         GetCurrentExp();
@@ -163,6 +164,8 @@ public class MainUI : MonoBehaviour
         InfoTime.text = DateTime.Now.ToString("HH시mm분");
 
     }
+
+    // 현재 경험치와 골드를 업데이트하는 매서드
     public void GetCurrentExp()
     {
         int currentGold = PlayerPrefs.GetInt(GameManager.goldCountKey); // 현재 골드 값 가져오기

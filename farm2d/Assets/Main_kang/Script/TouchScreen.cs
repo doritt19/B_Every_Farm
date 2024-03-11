@@ -15,7 +15,7 @@ public class TouchScreen : MonoBehaviour
     private bool wasZoomingLastFrame; // 줌 중이었는지 여부
 
     public GameObject isactivatingINVEN; // 인벤토리 오브젝트를 사용중이었는지 여부
-    public GameObject isactivatingMENU; // 인벤토리 오브젝트를 사용중이었는지 여부
+    public GameObject isactivatingMENU; // 메뉴 오브젝트를 사용중이었는지 여부
 
 
     void Awake()
@@ -26,16 +26,30 @@ public class TouchScreen : MonoBehaviour
 
     void Update()
     {
-        if (isactivatingMENU.activeSelf || isactivatingINVEN.activeSelf)
+        if (isactivatingMENU.activeSelf || isactivatingINVEN.activeSelf) // UI가 활성화 (인벤토리 및 메뉴버튼이 활성화) 되어있을때는 이동 불가
         {
+            // UI 활성화, 직교모드 활성화
+            cam.orthographic = true;
+            
+            // 인벤토리 활성화시 밭을 확대해서 보기
+            if (isactivatingINVEN.activeSelf)
+            {
+                cam.orthographicSize = 2.25f;
+                cam.transform.position = new Vector3(-4.3f,-6.4f,-10f);
+            }
+           
             return;
         }
         if (Input.touchSupported && Application.platform != RuntimePlatform.WebGLPlayer)
         {
+            // UI 비활성화 , 직교모드 비활성화
+            cam.orthographic = false;
             HandleTouch();
         }
         else
         {
+            // UI 비활성화, 직교모드 비활성화
+            cam.orthographic = false; 
             // 마우스로 이동 및 줌 처리
             HandleMouse();
         }

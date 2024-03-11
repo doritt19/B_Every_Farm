@@ -157,7 +157,7 @@ public class InventoryButton : MonoBehaviour
         Vector3 tileCenter = tilemap.GetCellCenterWorld(cellPosition);
         // 타일의 중심 좌표 계산
         tileCenter.x += 0;
-        tileCenter.y += 0.5f;
+        tileCenter.y += 0.2f;
         return tileCenter;
     }
     public void SpawnObjectIndex(int a, Vector3 tileCenter)

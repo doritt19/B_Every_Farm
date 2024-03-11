@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3558193182327101199}
   - component: {fileID: 1236388703154897333}
   - component: {fileID: -7740634202980468396}
+  - component: {fileID: 2561203980943956919}
   m_Layer: 0
   m_Name: Tomato_1
   m_TagString: Untagged
@@ -130,3 +131,22 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.74, y: 1.16}
   m_EdgeRadius: 0
+--- !u!114 &2561203980943956919
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2619681451927406494}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd4fe03f137d84f44bf9ed079c43a970, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sprite:
+  - {fileID: 21300000, guid: 7bcddc679284a8f429cd1d574b3f2c35, type: 3}
+  - {fileID: 21300000, guid: 6ba56813abf3178418717889d29ea657, type: 3}
+  - {fileID: 21300000, guid: a0d704f7fd19f0c4296e926b6e194d2e, type: 3}
+  - {fileID: 21300000, guid: 7fd0e3ee0f83c26469a862fc23b34323, type: 3}
+  glowTime: 4
+  harvesting: 0
