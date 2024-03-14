@@ -16,7 +16,7 @@ public class InventoryButton : MonoBehaviour
 
     bool isObjectSpawned = false;
 
-    List<Vector3> tileCenterList = new List<Vector3>();
+    public static List<Vector3> tileCenterList = new List<Vector3>();
     int spawnIndex;
 
     void Start()

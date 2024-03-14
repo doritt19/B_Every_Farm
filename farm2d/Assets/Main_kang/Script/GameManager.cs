@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Numerics;
 using System.Runtime.InteropServices;
 using UnityEngine;
 
@@ -9,6 +10,7 @@ public class GameManager : MonoBehaviour
     public const string goldCountKey = "GoldCount";
     public const string expCountKey = "ExpCount"; // 획득한 경험치
     public static int minigameCount = 3; // 미니게임 횟수
+
 
     // 싱글톤 패턴을 사용하기 위한 인스턴스 변수
     private static GameManager _instance;
@@ -46,6 +48,8 @@ public class GameManager : MonoBehaviour
         TestGame(); // 테스트를 위한 함수
     }
 
+
+
     /// <summary>
     /// 테스트를 위한 함수
     /// </summary>
@@ -54,16 +58,9 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt(goldCountKey, 20000);
         PlayerPrefs.SetInt(expCountKey, 0);
+        PlayerPrefs.SetInt("plantNum", 0);
         PlayerPrefs.Save();
     }
-   
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-        
-    }
-
     // Update is called once per frame
     void Update()
     {
