@@ -8,7 +8,7 @@ public class InvenPlant : ScriptableObject
     public string plantName;
     public Sprite plantImage;
     public int plantGold;
-    public int plantNum;
+    public int invenNum;
 
 }
 

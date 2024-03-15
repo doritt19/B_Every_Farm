@@ -6,7 +6,9 @@ using UnityEngine.UI;
 public class InvenSlot : MonoBehaviour
 {
     [SerializeField] Image image;
+    [SerializeField] int slotNum;
 
+    private int index;
     private InvenPlant _plant;
     public InvenPlant plant
     {
@@ -18,12 +20,14 @@ public class InvenSlot : MonoBehaviour
             {
                 image.color = new Color(1, 1, 1, 1);
                 image.sprite = plant.plantImage;
+                slotNum = plant.invenNum;
               
 
             }
             else
             {
                 image.color = new Color(1, 1, 1, 0);
+                slotNum = -1;
             }
         }
     }

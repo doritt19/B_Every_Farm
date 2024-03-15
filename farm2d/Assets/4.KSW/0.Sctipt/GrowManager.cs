@@ -54,12 +54,12 @@ public class GrowManager : MonoBehaviour
                 // 클릭된 오브젝트가 자신인지 확인합니다.
                 if (clickedObject == gameObject)
                 {
-                    Debug.Log("자신을 클릭했습니다!");
+                   // Debug.Log("자신을 클릭했습니다!");
                     // 물을 주고 성장 코드 실행
                     // 자식 오브젝트의 애니메이션 및 스프라이트 컴포넌트 가져오기
                     childAnimator = GetComponentInChildren<Animator>();
                     childSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-                    Debug.Log(childSprite);
+                   // Debug.Log(childSprite);
 
                     // 애니메이션 컴포넌트가 존재하는지 확인
                     if (childAnimator != null)
@@ -67,7 +67,7 @@ public class GrowManager : MonoBehaviour
                         // 애니메이션 재생
                         childAnimator.enabled = true;
                         childSprite.enabled = true;
-                        Debug.Log("애니메이션 재생");
+                      //  Debug.Log("애니메이션 재생");
 
                     }
                     else
@@ -80,7 +80,7 @@ public class GrowManager : MonoBehaviour
                     //자라는함수 실행
                     Grow();
                     // 자신이 수확 가능한 상태이면
-                    if (harvesting)
+                    if (harvesting && !inventory.inventoryFull)
                     {
                         test++; //클릭하여 작물을 수확시 경험치와 돈을 획득하는 코드
                         inventory.AddItem(invenPlant);

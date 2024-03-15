@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-
+ 
     private void Awake()
     {
         if (_instance == null)
@@ -61,9 +61,10 @@ public class GameManager : MonoBehaviour
         PlayerPrefs.SetInt("plantNum", 0);
         PlayerPrefs.Save();
     }
-    // Update is called once per frame
-    void Update()
+    // 게임 종료 버튼을 클릭할 때 호출될 메서드
+    public void QuitGame()
     {
-        
+        // 게임 종료
+        Application.Quit();
     }
 }
