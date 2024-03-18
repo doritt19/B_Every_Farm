@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 2561203980943956919}
   m_Layer: 0
   m_Name: Tomato_1
-  m_TagString: Untagged
+  m_TagString: Seed
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

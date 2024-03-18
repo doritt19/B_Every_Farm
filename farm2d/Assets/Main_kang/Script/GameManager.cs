@@ -10,7 +10,7 @@ public class GameManager : MonoBehaviour
     public const string goldCountKey = "GoldCount";
     public const string expCountKey = "ExpCount"; // 획득한 경험치
     public static int minigameCount = 3; // 미니게임 횟수
-
+    public static bool weather; // 물주기 스킬 비오는 날 체크용
 
     // 싱글톤 패턴을 사용하기 위한 인스턴스 변수
     private static GameManager _instance;
@@ -46,6 +46,7 @@ public class GameManager : MonoBehaviour
         DontDestroyOnLoad(gameObject);
 
         TestGame(); // 테스트를 위한 함수
+        weather = false;
     }
 
 

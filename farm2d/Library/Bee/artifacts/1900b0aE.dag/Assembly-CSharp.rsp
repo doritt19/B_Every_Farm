@@ -120,6 +120,7 @@
 -define:TEXTCORE_FONT_ENGINE_1_5_OR_NEWER
 -define:CSHARP_7_OR_LATER
 -define:CSHARP_7_3_OR_NEWER
+-r:"Assets/hb_minigame/Newtonsoft.Json.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.CoreModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.DeviceSimulatorModule.dll"
 -r:"C:/Program Files/Unity/Hub/Editor/2022.3.12f1/Editor/Data/Managed/UnityEngine/UnityEditor.DiagnosticsModule.dll"
@@ -389,6 +390,7 @@
 "Assets/hb_minigame/01.Scripts/PlayerController.cs"
 "Assets/hb_minigame/01.Scripts/Vegetables.cs"
 "Assets/hb_minigame/01.Scripts/VegetableSpawner.cs"
+"Assets/hb_minigame/01.Scripts/WeatherController.cs"
 "Assets/HJI/Scirpt/ItemDataBase.cs"
 "Assets/HJI/Scirpt/ShopInventory.cs"
 "Assets/HJI/Scirpt/ShopScriptUI.cs"
@@ -406,6 +408,7 @@
 "Assets/Main_kang/Script/Main UI.cs"
 "Assets/Main_kang/Script/SellPlant.cs"
 "Assets/Main_kang/Script/TouchScreen.cs"
+"Assets/Main_kang/Script/WaterPlant.cs"
 "Assets/MS/1. Scripts/DrobSeed.cs"
 "Assets/MS/1. Scripts/Grabb.cs"
 "Assets/MS/1. Scripts/GridButton.cs"

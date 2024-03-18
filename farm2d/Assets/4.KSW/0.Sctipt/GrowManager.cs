@@ -26,6 +26,11 @@ public class GrowManager : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();
 
+        // 물을 주고 성장 코드 실행
+        // 자식 오브젝트의 애니메이션 및 스프라이트 컴포넌트 가져오기
+        childAnimator = GetComponentInChildren<Animator>();
+        childSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
+
         //농작물을 심자마자 코루틴 시작
         // 한나 수정, 성장 함수화
         Grow();
@@ -54,28 +59,11 @@ public class GrowManager : MonoBehaviour
                 // 클릭된 오브젝트가 자신인지 확인합니다.
                 if (clickedObject == gameObject)
                 {
-                   // Debug.Log("자신을 클릭했습니다!");
-                    // 물을 주고 성장 코드 실행
-                    // 자식 오브젝트의 애니메이션 및 스프라이트 컴포넌트 가져오기
-                    childAnimator = GetComponentInChildren<Animator>();
-                    childSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
-                   // Debug.Log(childSprite);
+                    // Debug.Log("자신을 클릭했습니다!");
 
-                    // 애니메이션 컴포넌트가 존재하는지 확인
-                    if (childAnimator != null)
-                    {
-                        // 애니메이션 재생
-                        childAnimator.enabled = true;
-                        childSprite.enabled = true;
-                      //  Debug.Log("애니메이션 재생");
+                    // 물 애니메이션 실행
 
-                    }
-                    else
-                    {
-                        Debug.LogError("자식 오브젝트에 애니메이션 컴포넌트가 없습니다.");
-                    }
-
-                    StartCoroutine(WaterDelay()); // 물주는 시간 딜레이
+                    Waterplant();
 
                     //자라는함수 실행
                     Grow();
@@ -105,11 +93,36 @@ public class GrowManager : MonoBehaviour
         }
     }
 
+    
+    public void Waterplant()
+    {
+        if (harvesting)
+        {
+            return;
+        }
+        // 애니메이션 컴포넌트가 존재하는지 확인
+        if (childAnimator != null)
+        {
+            // 애니메이션 재생
+            childAnimator.enabled = true;
+            childSprite.enabled = true;
+            //  Debug.Log("애니메이션 재생");
+
+        }
+        else
+        {
+            Debug.LogError("자식 오브젝트에 애니메이션 컴포넌트가 없습니다.");
+        }
+
+        StartCoroutine(WaterDelay()); // 물주는 시간 딜레이
+        //자라는함수 실행
+        Grow();
+    }
     /// <summary>
     /// 애니메이션이 진행될때까지 기다리기
     /// </summary>
     /// <returns></returns>
-    private IEnumerator WaterDelay()
+    public IEnumerator WaterDelay()
     {
         yield return new WaitForSeconds(0.8f);
 
