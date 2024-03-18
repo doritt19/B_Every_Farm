@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/hb_minigame/00.Scenes/MiniGame.unity
     guid: 2f9a8c02ea75a77469657bdb4dbfa062
+  - enabled: 1
+    path: Assets/4.KSW/0.Scenes/Intro Scene.unity
+    guid: 7c7e6e8d3b9a3f141a4ca7f96d5acdeb
   m_configObjects: {}
