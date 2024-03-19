@@ -4,10 +4,14 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.UI;
 using UnityEngine.UIElements;
 
 public class InventoryButton : MonoBehaviour
 {
+    public Shopbutton shopbutton; //2024-03-13 추가 상점과 인벤 연동   
+    public Text[] seedText;
+
     public Tilemap tilemap; // 클릭한 타일맵을 저장할 변수
     public GameObject[] prefabObject;
     public GameObject[] seedPrefabs;
@@ -76,8 +80,16 @@ public class InventoryButton : MonoBehaviour
                         {
 
 
-                            if (!tileCenterList.Contains(tileCenter))
+
+                            if (!tileCenterList.Contains(tileCenter) && shopbutton.vagetableSeed[spawnIndex] >= 1)
                             {
+                                //2024-03-13 추가 상점과 인벤 연동   
+                                for (int i = 0; i < seedText.Length; i++)
+                                {
+                                    seedText[i].text = shopbutton.vagetableSeed[i].ToString();
+                                }
+                                shopbutton.vagetableSeed[spawnIndex] -= 1;//2024-03-13 추가 상점과 인벤 연동   
+                                seedText[spawnIndex].text = shopbutton.vagetableSeed[spawnIndex].ToString();
                                 tileCenterList.Add(tileCenter);
                                 Instantiate(seedPrefab, tileCenter, Quaternion.identity);
                             }

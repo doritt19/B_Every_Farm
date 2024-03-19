@@ -31,6 +31,9 @@ public class MainUI : MonoBehaviour
     public GameObject settingPanel; // 옵션 패널
     public GameObject minigamePanel; // 미니게임 시작 안내 패널
 
+    //2024-03-18 ai 오픈 버튼 추가 with MS
+    public GameObject imageAI;
+
 
     public Text InfoDate; // 날짜 정보 텍스트
     public Text InfoTime; // 시간 정보 텍스트
@@ -150,12 +153,27 @@ public class MainUI : MonoBehaviour
             case 6:
                 MenuOpen();
                 break;
+            case 7:
+                AIOpen();
+                break;
             // 추가적인 버튼에 대한 케이스도 필요하다면 여기에 추가
             default:
                 Debug.Log("Unknown button index");
                 break;
         }
 
+    }
+
+    private void AIOpen()
+    {
+        if (imageAI.activeSelf)
+        {
+            imageAI.gameObject.SetActive(false);
+        }
+        else
+        {
+            imageAI.gameObject.SetActive(true);
+        }
     }
     // 현재시간을 출력하는 매서드
     public void GetCurrentDate()
