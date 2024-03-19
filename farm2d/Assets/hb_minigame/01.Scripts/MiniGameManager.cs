@@ -232,8 +232,8 @@ public class MiniGameManager : MonoBehaviour
         GameManager.minigameCount = playerHealth;
 
 
-
-        SceneManager.LoadScene(0);
+        //
+        SceneManager.LoadScene(1);
 
     }
     // 게임 종료 시 goldCount를 PlayerPrefs에 저장

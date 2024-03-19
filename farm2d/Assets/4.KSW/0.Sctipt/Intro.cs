@@ -54,7 +54,7 @@ public class Intro : MonoBehaviour
         // 한나 수정 모바일 및 컴퓨터에서의 입력으로 씬 전환 변경
         if( Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene(1);
         }
     }
     IEnumerator Start()
