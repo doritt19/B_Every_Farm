@@ -9,6 +9,6 @@ public class InvenPlant : ScriptableObject
     public Sprite plantImage;
     public int plantGold;
     public int invenNum;
-
+    public int plantExp;
 }
 

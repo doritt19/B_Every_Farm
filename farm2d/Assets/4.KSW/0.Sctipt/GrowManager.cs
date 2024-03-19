@@ -67,14 +67,7 @@ public class GrowManager : MonoBehaviour
 
                     //자라는함수 실행
                     Grow();
-                    // 자신이 수확 가능한 상태이면
-                    if (harvesting && !inventory.inventoryFull)
-                    {
-                        test++; //클릭하여 작물을 수확시 경험치와 돈을 획득하는 코드
-                        inventory.AddItem(invenPlant);
-                        Destroy(gameObject);
-                        InventoryButton.tileCenterList.Remove(gameObject.transform.position);
-                    }
+                   
                 }
             }
         }
@@ -85,21 +78,41 @@ public class GrowManager : MonoBehaviour
 
     public void Grow()
     {
+        Debug.Log("test1");
+        // 자신이 수확 가능한 상태이면
+        if (harvesting && !inventory.inventoryFull)
+        {
+            Debug.Log("test2");
+            // 수확물에 따른 경험치 획득
+            PlayerPrefs.SetInt("ExpCount", PlayerPrefs.GetInt("ExpCount")+invenPlant.plantExp);
+            PlayerPrefs.Save();
+
+            // 인벤토리에 자신을 넣기
+            inventory.AddItem(invenPlant);
+
+            // 자신을 제거
+            Destroy(gameObject);
+            // 밭에서 자신의 위치를 제거하여 다시 심을 수 있게 초기화
+            InventoryButton.tileCenterList.Remove(gameObject.transform.position);
+        }
         // 물을 준 상태로 코르틴 실행
         if (spriteRenderer != null)
         {
+            Debug.Log("test3");
             StartCoroutine(ChangeSpriteWithDelay());
 
+        }
+        if (inventory.inventoryFull)
+        {
+            // 인벤토리가 꽉찼습니다
+            Debug.Log("인벤토리가 꽉찼습니다");
         }
     }
 
     
     public void Waterplant()
     {
-        if (harvesting)
-        {
-            return;
-        }
+        
         // 애니메이션 컴포넌트가 존재하는지 확인
         if (childAnimator != null)
         {

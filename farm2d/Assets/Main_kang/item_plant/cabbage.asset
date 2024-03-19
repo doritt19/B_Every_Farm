@@ -15,3 +15,5 @@ MonoBehaviour:
   plantName: "\uC591\uBC30\uCD94"
   plantImage: {fileID: 21300000, guid: 838da79e38b4cb14a816f77b4830fb50, type: 3}
   plantGold: 1600
+  invenNum: 0
+  plantExp: 1800
