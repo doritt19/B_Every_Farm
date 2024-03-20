@@ -5,7 +5,10 @@ using UnityEngine.UI;
 using TMPro;
 public class Shopbutton : MonoBehaviour
 {
+    public static Shopbutton instance;
     public int[] vagetableSeed; //2024-03-13 인벤-상점 연동 추가
+
+    public InventoryManager inventoryManager;
 
 
 
@@ -14,14 +17,26 @@ public class Shopbutton : MonoBehaviour
     public Text[] seedText;
 
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        for (int i = 0; i < seedText.Length; i++)
+        {
+            vagetableSeed[i] = inventoryManager.seeds[i];
+        }
+
+    }
     void Start()
     {
-
+        instance = this;
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        
+
     }
     public void DisplayItemInfo(Item item)
     {
@@ -77,18 +92,24 @@ public class Shopbutton : MonoBehaviour
                 case 1:
                     vagetableSeed[0] += 1; // 당근
                     seedText[0].text = vagetableSeed[0].ToString();
+                    inventoryManager.AddSeed(0,vagetableSeed[0]);
+
+
                     break;
                 case 2:
                     vagetableSeed[1] += 1; // 양배추
                     seedText[1].text = vagetableSeed[1].ToString();
+                    inventoryManager.AddSeed(1, vagetableSeed[1]);
                     break;
                 case 5:
                     vagetableSeed[2] += 1; // 호박
                     seedText[2].text = vagetableSeed[2].ToString();
+                    inventoryManager.AddSeed(2, vagetableSeed[2]);
                     break;
                 case 3:
                     vagetableSeed[3] += 1; // 토마토
                     seedText[3].text = vagetableSeed[3].ToString();
+                    inventoryManager.AddSeed(3, vagetableSeed[3]);
                     break;
 
 

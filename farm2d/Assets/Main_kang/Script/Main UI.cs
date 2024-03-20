@@ -221,7 +221,7 @@ public class MainUI : MonoBehaviour
         // 미니게임 카운트가 0 이상이라면 씬 전환
         if(GameManager.minigameCount>0)
         {
-            SceneManager.LoadScene(2); //미니게임 씬 실행 코드(HB)
+            SceneManager.LoadScene("MiniGame"); //미니게임 씬 실행 코드(HB)
         }
         else // 미니 게임 카운트가 0 이하라면 
         {

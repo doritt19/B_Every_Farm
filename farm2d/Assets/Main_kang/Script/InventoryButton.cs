@@ -11,6 +11,7 @@ public class InventoryButton : MonoBehaviour
 {
     public Shopbutton shopbutton; //2024-03-13 추가 상점과 인벤 연동   
     public Text[] seedText;
+    public InventoryManager inventoryManager;
 
     public Tilemap tilemap; // 클릭한 타일맵을 저장할 변수
     public GameObject[] prefabObject;
@@ -90,6 +91,7 @@ public class InventoryButton : MonoBehaviour
                                 }
                                 shopbutton.vagetableSeed[spawnIndex] -= 1;//2024-03-13 추가 상점과 인벤 연동   
                                 seedText[spawnIndex].text = shopbutton.vagetableSeed[spawnIndex].ToString();
+                                inventoryManager.RemoveSeed(spawnIndex, shopbutton.vagetableSeed[spawnIndex]);
                                 tileCenterList.Add(tileCenter);
                                 Instantiate(seedPrefab, tileCenter, Quaternion.identity);
                             }

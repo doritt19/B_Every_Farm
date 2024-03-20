@@ -3,13 +3,16 @@ using System.Collections.Generic;
 using System.Numerics;
 using System.Runtime.InteropServices;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     // PlayerPrefs 키
     public const string goldCountKey = "GoldCount";
     public const string expCountKey = "ExpCount"; // 획득한 경험치
+    public const string SeedCountKey = "12";
     public static int minigameCount = 3; // 미니게임 횟수
+    Text text; 
     public static bool weather; // 물주기 스킬 비오는 날 체크용
 
     // 싱글톤 패턴을 사용하기 위한 인스턴스 변수
@@ -48,6 +51,10 @@ public class GameManager : MonoBehaviour
         TestGame(); // 테스트를 위한 함수
         weather = false;
     }
+    private void Update()
+    {
+        
+    }
 
 
 
@@ -56,6 +63,7 @@ public class GameManager : MonoBehaviour
     /// </summary>
     public void TestGame()
     {
+        
         PlayerPrefs.DeleteAll();
         PlayerPrefs.SetInt(goldCountKey, 20000);
         PlayerPrefs.SetInt(expCountKey, 0);

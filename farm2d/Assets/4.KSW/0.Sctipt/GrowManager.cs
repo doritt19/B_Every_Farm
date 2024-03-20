@@ -1,5 +1,7 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
+
 
 public class GrowManager : MonoBehaviour
 {
@@ -65,7 +67,7 @@ public class GrowManager : MonoBehaviour
 
                     //자라는함수 실행
                     Grow();
-                   
+
                 }
             }
         }
@@ -82,7 +84,7 @@ public class GrowManager : MonoBehaviour
         {
             Debug.Log("test2");
             // 수확물에 따른 경험치 획득
-            PlayerPrefs.SetInt("ExpCount", PlayerPrefs.GetInt("ExpCount")+invenPlant.plantExp);
+            PlayerPrefs.SetInt("ExpCount", PlayerPrefs.GetInt("ExpCount") + invenPlant.plantExp);
             PlayerPrefs.Save();
 
             // 인벤토리에 자신을 넣기
@@ -107,10 +109,10 @@ public class GrowManager : MonoBehaviour
         }
     }
 
-    
+
     public void Waterplant()
     {
-        
+
         // 애니메이션 컴포넌트가 존재하는지 확인
         if (childAnimator != null)
         {
@@ -135,7 +137,7 @@ public class GrowManager : MonoBehaviour
     /// <returns></returns>
     public IEnumerator WaterDelay()
     {
-        yield return new WaitForSeconds(0.8f);
+        yield return new WaitForSeconds(1f);
 
         // 한나수정, 애니메이션 실행 및 물방울 스프라이트 비활성화 초기화
         childSprite.enabled = false;
@@ -144,12 +146,12 @@ public class GrowManager : MonoBehaviour
 
     private IEnumerator ChangeSpriteWithDelay()
     {
+        // 인덱스 초기화
+        //currentIndex = 0;
 
-        if (currentIndex < sprite.Length) // 현재 인덱스가 스프라이트 배열보다 작다면
+        // 배열의 길이만큼 반복하도록 수정
+        while (currentIndex < sprite.Length)
         {
-
-            yield return new WaitForSeconds(growTime); // 작물이 자라는 시간동안 기다리기
-
             spriteRenderer.sprite = sprite[currentIndex]; // 스프라이트 변경
 
             if (currentIndex == sprite.Length - 1)
@@ -157,10 +159,9 @@ public class GrowManager : MonoBehaviour
                 harvesting = true; // 마지막 스프라이트로 변경되었으면 수확이 가능한 상태로 변경
             }
 
-            currentIndex++;
+            currentIndex++; // 다음 인덱스로 이동
 
-            if (currentIndex >= sprite.Length)
-                yield break;  // 마지막 스프라이트로 변경되었으면 실행 종료
+            yield return new WaitForSeconds(growTime); // 작물이 자라는 시간동안 기다리기
         }
     }
 }

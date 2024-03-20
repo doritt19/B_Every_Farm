@@ -8,13 +8,13 @@ public class Intro : MonoBehaviour
 {
     public Image IntroImage;
     public Text IntroText;
-    public float maxXSize = 5.7f; // 이미지 최대 크기(x)
-    public float maxYSize = 4.7f; // 이미지 최대 크기(y)
+    public float maxXSize = 6.6f; // 이미지 최대 크기(x)
+    public float maxYSize = 4.6f; // 이미지 최대 크기(y)
     public float maxZSize = 1f; // 이미지 최대 크기(z)
-    public float minSizeX = 5.5f; // 이미지 최소 크기(x)
+    public float minSizeX = 6.5f; // 이미지 최소 크기(x)
     public float minSizeY = 4.5f; // 이미지 최소 크기(y)
     public float minSizeZ = 1f; // 이미지 최소 크기(z)
-    public float speed = 0.3f; // 애니메이션 속도
+    public float speed = 0.2f; // 애니메이션 속도
     private bool isGrowing = true;
 
     /// <summary>
@@ -54,7 +54,7 @@ public class Intro : MonoBehaviour
         // 한나 수정 모바일 및 컴퓨터에서의 입력으로 씬 전환 변경
         if( Input.GetMouseButtonDown(0) || (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began))
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene("Main");
         }
     }
     IEnumerator Start()

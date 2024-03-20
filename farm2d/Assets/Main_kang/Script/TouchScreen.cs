@@ -17,6 +17,11 @@ public class TouchScreen : MonoBehaviour
     public GameObject isactivatingINVEN; // 인벤토리 오브젝트를 사용중이었는지 여부
     public GameObject isactivatingMENU; // 메뉴 오브젝트를 사용중이었는지 여부
 
+    // 카메라 이동에 관한 변수
+    public float minX = -10f; // 카메라 이동 가능한 최소 X 위치
+    public float maxX = 9f; // 카메라 이동 가능한 최대 X 위치
+    public float minY = -9f; // 카메라 이동 가능한 최소 Y 위치
+    public float maxY = 5f; // 카메라 이동 가능한 최대 Y 위치
 
     void Awake()
     {
@@ -108,8 +113,12 @@ public class TouchScreen : MonoBehaviour
 
     void PanCamera(Vector2 delta)
     {
-        // 카메라 이동
-        transform.Translate(delta * Time.deltaTime, Space.World);
+        Vector3 desiredPosition = transform.position + new Vector3(delta.x, delta.y, 0f);
+        // 카메라가 이동할 위치가 유효한지 확인
+        float clampedX = Mathf.Clamp(desiredPosition.x, minX, maxX);
+        float clampedY = Mathf.Clamp(desiredPosition.y, minY, maxY);
+        // 유효한 위치로 카메라 이동
+        transform.position = new Vector3(clampedX, clampedY, transform.position.z);
     }
 
     void ZoomCamera(float deltaMagnitudeDiff)
