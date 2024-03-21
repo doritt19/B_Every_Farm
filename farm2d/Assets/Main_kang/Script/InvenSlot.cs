@@ -19,9 +19,9 @@ public class InvenSlot : MonoBehaviour
             if (_plant != null)
             {
                 image.color = new Color(1, 1, 1, 1);
-                image.sprite = plant.plantImage;
+                image.sprite = plant.LoadImageFromPath();
                 slotNum = plant.invenNum;
-              
+
 
             }
             else

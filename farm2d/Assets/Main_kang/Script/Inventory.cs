@@ -75,12 +75,15 @@ public class Inventory : MonoBehaviour
                     Shopbutton.vagetableSeed[i] = inventoryManager.seeds[i];
                 }
 
-
                 Debug.Log(inventoryManager.seeds[0].ToString());
-                plants.Add(item);
-                sellAllGold += item.plantGold;
-                // 인벤토리에 아이템 추가하는 코드
-                Debug.Log("인벤토리 아이템 로드: " + item.name);
+                if (item != null)
+                {
+                    plants.Add(item);
+                    sellAllGold += item.plantGold;
+                    // 인벤토리에 아이템 추가하는 코드
+                    Debug.Log("인벤토리 아이템 로드: " + item.name);
+                }
+              
             }
             allSellText.text = " 모든 수확물을 판매하시겠습니까?\r\n+" + sellAllGold.ToString() + "원";
             if (sellAllGold == 0)

@@ -15,12 +15,15 @@ public class CameraView : MonoBehaviour
     AspectRatioFitter aspectRatioFitter;
     // 종횡비가 설정 되었는지 여부를 추적하는 플래그
     bool ratioSet;
-
-    void Start()
+    private void OnEnable()
     {
         rawImage = GetComponent<RawImage>();
         aspectRatioFitter = GetComponent<AspectRatioFitter>();
         initWebCam();
+    }
+    void Start()
+    {
+
     }
 
     // Update is called once per frame
@@ -54,9 +57,17 @@ public class CameraView : MonoBehaviour
         rawImage.texture = webCamTexture;
         if (Application.platform == RuntimePlatform.Android)
         {
-            rawImage.transform.localScale = new Vector3(1f, -1f, 1f); // 이미지를 수직으로 뒤집음
+            if (Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown)
+            {
+                rawImage.transform.localScale = new Vector3(5f, -5f, 1f); // 세로 모드에서 뒤집기
+            }
+            else if (Screen.orientation == ScreenOrientation.LandscapeLeft || Screen.orientation == ScreenOrientation.LandscapeRight)
+            {
+                rawImage.transform.localScale = new Vector3(5f, 5f, 1f); // 가로 모드에서 뒤집기 (필요한 경우 조정)
+            }
         }
         webCamTexture.Play();
+
     }
 
     /// <summary>
@@ -66,5 +77,11 @@ public class CameraView : MonoBehaviour
     public WebCamTexture GetCamImage()
     {
         return webCamTexture; // 현재 웹캠 텍스처의 참조를 반환
+    }
+    private void OnDisable()
+    {
+
+        webCamTexture.Stop();
+
     }
 }

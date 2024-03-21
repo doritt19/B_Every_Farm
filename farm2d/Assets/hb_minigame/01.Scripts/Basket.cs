@@ -31,7 +31,7 @@ public class Basket : MonoBehaviour
         //}
         if (collision.gameObject.tag == "Fruit")
         {
-            Debug.Log("충돌");
+            
             // 충돌한 오브젝트가 "Fruit" 태그인 경우
             MiniGameManager miniGameManager = MiniGameManager.instance;
             miniGameManager.AddGold(1); // 골드 카운트 증가
