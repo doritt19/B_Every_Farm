@@ -77,6 +77,7 @@ public class GrowManager : MonoBehaviour
 
     public void Grow()
     {
+        Debug.Log(harvesting);
         Debug.Log("grow싱행");
         // 자신이 수확 가능한 상태이면
         if (harvesting && !inventory.inventoryFull)
@@ -152,18 +153,18 @@ public class GrowManager : MonoBehaviour
         {
             isGrowing = true;
 
-            currentIndex++;
 
             yield return new WaitForSeconds(growTime); // 작물이 자라는 시간동안 기다리기
 
             spriteRenderer.sprite = sprite[currentIndex]; // 스프라이트 변경
-            isGrowing = false;
-            if (currentIndex == sprite.Length )
+            
+            if (currentIndex == sprite.Length -1)
             {
                 harvesting = true; // 마지막 스프라이트로 변경되었으면 수확이 가능한 상태로 변경
             }
 
-
+            currentIndex++;
+            isGrowing = false;
             if (currentIndex >= sprite.Length)  yield break;  // 마지막 스프라이트로 변경되었으면 실행 종료
         }
     }

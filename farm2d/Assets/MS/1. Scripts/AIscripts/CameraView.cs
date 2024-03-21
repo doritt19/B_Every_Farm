@@ -55,7 +55,7 @@ public class CameraView : MonoBehaviour
         // 웹캠이 제공해주는 비디오의 width, height 가져옴. 프레임 30.
         webCamTexture = new WebCamTexture(camName, Screen.width, Screen.height, 30);
         rawImage.texture = webCamTexture;
-        if (Application.platform == RuntimePlatform.Android)
+        if (Application.platform == RuntimePlatform.Android) 
         {
             if (Screen.orientation == ScreenOrientation.Portrait || Screen.orientation == ScreenOrientation.PortraitUpsideDown)
             {
