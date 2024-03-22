@@ -46511,7 +46511,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   plants: []
-  plants_find: []
+  plants_find:
+  - {fileID: 11400000, guid: 4831ea64a42c3b946a5f90eb3fe30527, type: 2}
+  - {fileID: 11400000, guid: 5626bc3e0531a6940a27f3a32b884852, type: 2}
+  - {fileID: 11400000, guid: 8c9a25b3b43ca0b40bb76251d12cdd96, type: 2}
+  - {fileID: 11400000, guid: 4368a2a1938f31649b1122dd4224f275, type: 2}
   inventoryManager: {fileID: 11400000, guid: 5565dd67ca8d3154c96702ddb597f70f, type: 2}
   inventoryFull: 0
   seedText:
