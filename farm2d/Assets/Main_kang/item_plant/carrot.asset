@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: carrot
   m_EditorClassIdentifier: 
   plantName: "\uB2F9\uADFC"
+  plantImage: {fileID: 21300000, guid: 09200d2042945ce43b8f089d21e39682, type: 3}
   plantGold: 1000
   invenNum: 0
   plantExp: 1100
-  imagePath: Images/Carrot_Icon

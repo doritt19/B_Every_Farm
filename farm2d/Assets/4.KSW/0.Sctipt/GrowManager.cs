@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using static UnityEditor.Progress;
+
 
 public class GrowManager : MonoBehaviour
 {
@@ -10,7 +10,6 @@ public class GrowManager : MonoBehaviour
     public float growTime = 0; // 작물을 심은 후 지난 시간 (한나수정: 작물 성장 시간 및 식물 구별 코드)
     public bool harvesting = false;  // 수확이 가능한 상태인지 확인하는 bool값
     private int test = 0;  // 테스트 변수
-    private bool isGrowing = false;
 
     public InvenPlant invenPlant;
     private float nextTime = 0f; // 한나 수정, 작물 성장 누적 시간
@@ -18,7 +17,7 @@ public class GrowManager : MonoBehaviour
     private int currentIndex = 0; // 한나수정, 현재 스프라이트 번호
     private Animator childAnimator;// 자식 오브젝트의 애니메이션 컴포넌트에 접근하기 위한 변수
     private SpriteRenderer childSprite; // 자식 오브젝트 물방울의 스프라이트에 접근하기 위한 변수
-
+    
     void Start()
     {
         nextTime = growTime;
@@ -33,8 +32,8 @@ public class GrowManager : MonoBehaviour
         childSprite = transform.GetChild(0).GetComponent<SpriteRenderer>();
 
         //농작물을 심자마자 코루틴 시작
-        // 한나 수정, 성장 함수화, 물주고 난후부터 성장시작
-        //Grow();
+        // 한나 수정, 성장 함수화
+        Grow();
     }
     /// <summary>
     /// 한나 수정
@@ -66,6 +65,8 @@ public class GrowManager : MonoBehaviour
 
                     Waterplant();
 
+                    //자라는함수 실행
+                    Grow();
 
                 }
             }
@@ -77,11 +78,11 @@ public class GrowManager : MonoBehaviour
 
     public void Grow()
     {
-        Debug.Log(harvesting);
-        Debug.Log("grow싱행");
+        Debug.Log("test1");
         // 자신이 수확 가능한 상태이면
         if (harvesting && !inventory.inventoryFull)
         {
+            Debug.Log("test2");
             // 수확물에 따른 경험치 획득
             PlayerPrefs.SetInt("ExpCount", PlayerPrefs.GetInt("ExpCount") + invenPlant.plantExp);
             PlayerPrefs.Save();
@@ -97,7 +98,7 @@ public class GrowManager : MonoBehaviour
         // 물을 준 상태로 코르틴 실행
         if (spriteRenderer != null)
         {
-            Debug.Log("성장해");
+            Debug.Log("test3");
             StartCoroutine(ChangeSpriteWithDelay());
 
         }
@@ -136,8 +137,8 @@ public class GrowManager : MonoBehaviour
     /// <returns></returns>
     public IEnumerator WaterDelay()
     {
-        yield return new WaitForSeconds(0.8f);
-        Debug.Log("물준거 기다림");
+        yield return new WaitForSeconds(1f);
+
         // 한나수정, 애니메이션 실행 및 물방울 스프라이트 비활성화 초기화
         childSprite.enabled = false;
         childAnimator.enabled = false;
@@ -145,27 +146,22 @@ public class GrowManager : MonoBehaviour
 
     private IEnumerator ChangeSpriteWithDelay()
     {
-        if (isGrowing)
+        // 인덱스 초기화
+        //currentIndex = 0;
+
+        // 배열의 길이만큼 반복하도록 수정
+        while (currentIndex < sprite.Length)
         {
-            yield break;
-        }
-        if (currentIndex < sprite.Length) // 현재 인덱스가 스프라이트 배열보다 작다면
-        {
-            isGrowing = true;
-
-
-            yield return new WaitForSeconds(growTime); // 작물이 자라는 시간동안 기다리기
-
             spriteRenderer.sprite = sprite[currentIndex]; // 스프라이트 변경
-            
-            if (currentIndex == sprite.Length -1)
+
+            if (currentIndex == sprite.Length - 1)
             {
                 harvesting = true; // 마지막 스프라이트로 변경되었으면 수확이 가능한 상태로 변경
             }
 
-            currentIndex++;
-            isGrowing = false;
-            if (currentIndex >= sprite.Length)  yield break;  // 마지막 스프라이트로 변경되었으면 실행 종료
+            currentIndex++; // 다음 인덱스로 이동
+
+            yield return new WaitForSeconds(growTime); // 작물이 자라는 시간동안 기다리기
         }
     }
 }

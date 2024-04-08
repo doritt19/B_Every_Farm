@@ -1,13 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Numerics;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class Inventory : MonoBehaviour
 {
     public List<InvenPlant> plants;
-    public List<InvenPlant> plants_find ;
+    public List<InvenPlant> plants_find = new List<InvenPlant>();
     public InventoryManager inventoryManager;
     public bool inventoryFull; // 인벤토리가 꽉차있으면 수확이 불가능하다를 판단
     public Text[] seedText;
@@ -40,14 +39,10 @@ public class Inventory : MonoBehaviour
 
     public InvenPlant FindPlant(string name)
     {
-        Debug.Log("파인드플랜트" + name);
         return plants_find.Find(plant => plant.plantName == name);
     }
     public void LoadInventory()
     {
-<<<<<<< HEAD
-       
-=======
         //// 기존에 저장된 인벤토리 데이터가 있는지 확인
         // if (SaveLoadManager.LoadInventory() != null)
         // {
@@ -66,7 +61,6 @@ public class Inventory : MonoBehaviour
         // Debug.Log(inventoryManager);
 
 
->>>>>>> parent of bb225723 (Final00)
         inventoryManager.JsonLoad();
         sellAllGold = 0;
         if (inventoryManager != null)
@@ -81,15 +75,12 @@ public class Inventory : MonoBehaviour
                     Shopbutton.vagetableSeed[i] = inventoryManager.seeds[i];
                 }
 
-                Debug.Log("씨드 네임"+inventoryManager.seeds[0].ToString()+"아이템"+item);
-                if (item != null)
-                {
-                    plants.Add(item) ;
-                    sellAllGold += item.plantGold;
-                    // 인벤토리에 아이템 추가하는 코드
-                    Debug.Log("인벤토리 아이템 로드: " + item.name);
-                }
-              
+
+                Debug.Log(inventoryManager.seeds[0].ToString());
+                plants.Add(item);
+                sellAllGold += item.plantGold;
+                // 인벤토리에 아이템 추가하는 코드
+                Debug.Log("인벤토리 아이템 로드: " + item.name);
             }
             allSellText.text = " 모든 수확물을 판매하시겠습니까?\r\n+" + sellAllGold.ToString() + "원";
             if (sellAllGold == 0)

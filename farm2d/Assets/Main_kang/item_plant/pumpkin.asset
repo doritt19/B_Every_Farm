@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: pumpkin
   m_EditorClassIdentifier: 
   plantName: "\uD638\uBC15"
+  plantImage: {fileID: 21300000, guid: 439c64d318f7d3e42a533163ff37edf9, type: 3}
   plantGold: 2000
   invenNum: 0
   plantExp: 2800
-  imagePath: Images/Pumpkin_Icon

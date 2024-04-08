@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: tomato
   m_EditorClassIdentifier: 
   plantName: "\uD1A0\uB9C8\uD1A0"
+  plantImage: {fileID: 21300000, guid: 7fd0e3ee0f83c26469a862fc23b34323, type: 3}
   plantGold: 1100
-  invenNum: 2
+  invenNum: 0
   plantExp: 1500
-  imagePath: Images/Tomato_Icon

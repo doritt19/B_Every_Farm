@@ -12,6 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdbea56e60f5cc94dae6f9910118bf56, type: 3}
   m_Name: New Inventory
   m_EditorClassIdentifier: 
-  itemNames:
-  - "\uB2F9\uADFC"
-  seeds: 01000000030000000000000001000000
+  items:
+  - {fileID: 11400000, guid: 5626bc3e0531a6940a27f3a32b884852, type: 2}
+  - {fileID: 11400000, guid: 5626bc3e0531a6940a27f3a32b884852, type: 2}
+  - {fileID: 11400000, guid: 5626bc3e0531a6940a27f3a32b884852, type: 2}
+  - {fileID: 11400000, guid: 5626bc3e0531a6940a27f3a32b884852, type: 2}
+  - {fileID: 11400000, guid: 5626bc3e0531a6940a27f3a32b884852, type: 2}
+  - {fileID: 11400000, guid: 5626bc3e0531a6940a27f3a32b884852, type: 2}
+  seeds: 04000000000000000000000000000000
